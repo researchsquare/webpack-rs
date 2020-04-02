@@ -1,5 +1,4 @@
 module.exports = {
-    cacheDirectory: true,
     compact: false,
     presets: [
         '@babel/react',

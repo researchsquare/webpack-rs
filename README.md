@@ -11,4 +11,4 @@ This package exposes two functions:
  - `extendDefaultWebpackConfiguration`: Use this to merge the base configuration with your apps configuration
  - `copyFiles`: Use this to copy files from one location to another
 
-There's a basic example [here]((/example/webpack.config.js) that can be ran using `npx webpack --config=example/webpack.config.js`
+There's a basic example [here](/example/webpack.config.js) that can be ran using `npx webpack --config=example/webpack.config.js`

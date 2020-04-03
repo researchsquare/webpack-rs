@@ -16,7 +16,10 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: require('./babel-config'),
+                    options: {
+                        ...require('./babel.config.js'),
+                        cacheDirectory: true,
+                    },
                 },
             },
             {

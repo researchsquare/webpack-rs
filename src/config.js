@@ -31,7 +31,7 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
             },
             {
-                test: /\.(jpg|eot|png|gif|svg|ttf|woff|woff2|oft|ico)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(jpg|eot|png|gif|svg|ttf|woff|woff2|otf|ico)(\?v=\d+\.\d+\.\d+)?$/,
                 use: {
                     loader: 'file-loader',
                 },

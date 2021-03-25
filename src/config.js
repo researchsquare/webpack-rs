@@ -8,7 +8,7 @@ const isDev = env === 'development';
 
 module.exports = {
     cache: true,
-    mode: 'none',
+    mode: isDev ? 'development' : 'production',
     module: {
         rules: [
             {
@@ -51,9 +51,7 @@ module.exports = {
                 parallel: true,
             }),
             new TerserJSPlugin({
-                cache: true,
                 parallel: true,
-                sourceMap: true,
             }),
         ],
     },

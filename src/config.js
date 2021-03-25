@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -47,7 +47,9 @@ module.exports = {
     optimization: {
         minimize: !isDev,
         minimizer: [
-            new OptimizeCSSAssetsPlugin({}),
+            new CssMinimizerPlugin({
+                parallel: true,
+            }),
             new TerserJSPlugin({
                 cache: true,
                 parallel: true,

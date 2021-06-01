@@ -1,7 +1,8 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const env = process.env.NODE_ENV || 'production';
 const isDev = env === 'development';
@@ -61,6 +62,7 @@ module.exports = {
             filename: '[name].[contenthash].css',
             ignoreOrder: true,
         }),
+        new WebpackManifestPlugin({}),
         ...(process.env.ANALYZE ? [new BundleAnalyzerPlugin({ analyzerMode: 'static' })] : []),
     ],
     resolve: {

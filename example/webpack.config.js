@@ -1,23 +1,18 @@
-import path from 'path';
-import { extendDefaultWebpackConfiguration, Plugins } from '../src/index.js';
-import { fileURLToPath } from 'url';
+const path = require('path');
+const { extendDefaultWebpackConfiguration, copyFiles } = require('../src/index.js');
 
-const dirname = path.dirname(fileURLToPath(import.meta.url));
-
-export default extendDefaultWebpackConfiguration({
-    entry: path.join(dirname, 'index.js'),
+module.exports = extendDefaultWebpackConfiguration({
+    entry: path.join(__dirname, 'index.js'),
     plugins: [
-        new Plugins.CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.join(dirname, 'index.js'),
-                    to: path.join(dirname, 'dist', 'index-copied.js'),
-                },
-            ],
-        }),
+        copyFiles([
+            {
+                from: path.join(__dirname, 'index.js'),
+                to: path.join(__dirname, 'dist', 'index-copied.js'),
+            },
+        ]),
     ],
     output: {
-        path: path.join(dirname, 'dist'),
+        path: path.join(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
     },
 });

@@ -1,8 +1,20 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const config = require('./config');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const config = require('./config.js');
+const helperFunctions = require('./helpers.js');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 
+const helpers = helperFunctions;
+const extendDefaultWebpackConfiguration = originalConfig => merge(config, originalConfig);
+const Plugins = {
+    CopyWebpackPlugin,
+    MiniCssExtractPlugin,
+    WebpackManifestPlugin,
+};
+
 module.exports = {
-    copyFiles: files => new CopyWebpackPlugin({ patterns: files }),
-    extendDefaultWebpackConfiguration: originalConfig => merge(config, originalConfig),
+    extendDefaultWebpackConfiguration,
+    helpers,
+    Plugins,
 };

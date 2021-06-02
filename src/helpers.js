@@ -1,10 +1,10 @@
-const imagemin = require('imagemin');
-const imageminJpegtran = require('imagemin-jpegtran');
-const imageminPngquant = require('imagemin-pngquant');
-const imageminSvgo = require('imagemin-svgo');
-const imageminGifsicle = require('imagemin-gifsicle');
+import imagemin from 'imagemin';
+import imageminJpegtran from 'imagemin-jpegtran';
+import imageminPngquant from 'imagemin-pngquant';
+import imageminSvgo from 'imagemin-svgo';
+import imageminGifsicle from 'imagemin-gifsicle';
 
-const optimizeImages = (originalBuffer, absoluteFrom) => {
+export const optimizeImages = (originalBuffer, absoluteFrom) => {
     if (!absoluteFrom.match(/\.(jpe?g|png|gif|svg)$/) || process.env.NODE_ENV !== 'production') {
         return originalBuffer;
     }
@@ -32,4 +32,4 @@ const optimizeImages = (originalBuffer, absoluteFrom) => {
     });
 };
 
-module.exports = { optimizeImages };
+export default { optimizeImages };

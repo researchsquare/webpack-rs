@@ -1,7 +1,10 @@
-const path = require('path');
-const { extendDefaultWebpackConfiguration, Plugins } = require('../src/index.js');
+import path from 'path';
+import { extendDefaultWebpackConfiguration, Plugins } from '../src/index.js';
+import { fileURLToPath } from 'url';
 
-module.exports = extendDefaultWebpackConfiguration({
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default extendDefaultWebpackConfiguration({
     entry: path.join(__dirname, 'index.js'),
     plugins: [
         new Plugins.CopyWebpackPlugin({

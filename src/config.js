@@ -1,6 +1,7 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const babelConfig = require('./babel.config.js');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const env = process.env.NODE_ENV || 'production';
@@ -17,7 +18,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        ...require('./babel.config.js'),
+                        ...babelConfig,
                         cacheDirectory: true,
                     },
                 },
@@ -61,6 +62,7 @@ module.exports = {
             filename: '[name].[contenthash].css',
             ignoreOrder: true,
         }),
+
         ...(process.env.ANALYZE ? [new BundleAnalyzerPlugin({ analyzerMode: 'static' })] : []),
     ],
     resolve: {

@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.2] - 2022-03-30
+
+### Security
+ - Update `node-sass`
+ - Update `minimist`
+ - Update `nanoid`
+
 ## [4.0.1] - 2021-11-29
 
 ### Security

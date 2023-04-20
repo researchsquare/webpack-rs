@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.7] - 2023-04-20
+
+### Security
+ - Update `remapping`
+ - Update `babble/code-frame`
+
 ## [4.0.3] - 2022-04-27
 
 ### Security

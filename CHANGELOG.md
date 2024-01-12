@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Security
+## [4.0.11] - 2024-01-12
+- Several minor package upgrades
+- Major version upgrades:
+    - webpack-manifest-plugin 3.4.1 -> 5.0.0 (two major versions)
+    - css-minimizer-webpack-plugin 3.4.1 -> 5.0.1
+    - node-sass 7.0.3 -> 9.0.0
+- Replace deprecated packages
+    - Replace @babel/plugin-proposal-class-properties with @babel/plugin-transform-class-properties.
+    - Replace @babel/plugin-proposal-object-rest-spread with @babel/plugin-transform-object-rest-spread.
+
+### Security
 ## [4.0.10] - 2023-12-18
 
 ## [4.0.9] - 2023-11-01
